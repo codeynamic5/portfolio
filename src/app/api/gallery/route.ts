@@ -1,28 +1,24 @@
 // src/app/api/gallery/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const category = searchParams.get('category');
+    // Mock data for now - replace with database when ready
+    const mockGalleryItems = [
+      {
+        id: 1,
+        title: "Abstract Digital Art",
+        image: "/gallery/artwork1.jpg",
+        category: "digital",
+        description: "Created with Photoshop and Illustrator",
+        featured: true,
+        order: 1,
+        createdAt: new Date()
+      }
+    ];
 
-    let whereClause = {};
-    if (category && category !== 'all') {
-      whereClause = { category };
-    }
-
-    const galleryItems = await PrismaClient.galleryItem.findMany({
-      where: whereClause,
-      orderBy: [
-        { featured: 'desc' },
-        { order: 'asc' },
-        { createdAt: 'desc' }
-      ]
-    });
-
-    return NextResponse.json(galleryItems);
-  } catch (error) {
+    return NextResponse.json(mockGalleryItems);
+  } catch {
     return NextResponse.json(
       { error: 'Failed to fetch gallery items' },
       { status: 500 }

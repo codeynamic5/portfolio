@@ -1,9 +1,6 @@
 // components/projects/ProjectGrid.tsx
 'use client';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
-import ProjectCard from './ProjectCard';
-import ProjectFilter from './ProjectFilter';
 
 const projectsData = [
   {
@@ -28,55 +25,46 @@ const projectsData = [
     featured: false,
     category: "frontend"
   }
-  // Add more projects
 ];
 
 export default function ProjectGrid() {
-  const [filteredProjects, setFilteredProjects] = useState(projectsData);
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const handleFilter = (category: string) => {
-    setActiveFilter(category);
-    if (category === 'all') {
-      setFilteredProjects(projectsData);
-    } else {
-      setFilteredProjects(projectsData.filter(project => project.category === category));
-    }
-  };
+  const [filteredProjects] = useState(projectsData);
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">My Projects</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and passion for development. 
-            Click on any project to view details and access the live demo or source code.
+            A collection of projects that showcase my skills and passion for development.
           </p>
-        </motion.div>
+        </div>
 
-        <ProjectFilter activeFilter={activeFilter} onFilter={handleFilter} />
-
-        <motion.div
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <ProjectCard project={project} />
-            </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-blue-100 text-blue-600 rounded text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <a href={project.githubUrl} className="px-4 py-2 bg-gray-800 text-white rounded text-sm">
+                    GitHub
+                  </a>
+                  <a href={project.liveUrl} className="px-4 py-2 bg-blue-600 text-white rounded text-sm">
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
