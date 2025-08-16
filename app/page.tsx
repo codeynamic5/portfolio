@@ -7,15 +7,14 @@ import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
   return (
-    <PageLayout>
-      {/* Hero Section with Background Drawing */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Drawing - Only for hero section, from top to scroll indicator */}
+    <PageLayout className="-mt-16">
+      {/* Hero Section with Background Drawing - starts from very top */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        {/* Background Drawing - contained within hero section only */}
         <div 
-          className="absolute top-0 left-0 right-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
           style={{
-            backgroundImage: 'url(/images/introduction-drawing.png)',
-            bottom: '80px' // Stops just above the scroll indicator
+            backgroundImage: 'url(/images/introduction-drawing.png)'
           }}
         >
           {/* Minimal gradient overlay for text readability */}
@@ -66,8 +65,8 @@ export default function HomePage() {
         </ScrollAnimation>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-20 px-4">
+      {/* Introduction Section - Higher z-index to appear above fixed background */}
+      <section className="relative z-20 py-20 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
           <ScrollAnimation>
             <div className="text-center space-y-8">
