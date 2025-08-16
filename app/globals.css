@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Custom portfolio color palette with antique white and forest green */
+  --background: #faebd7; /* Antique White */
+  --foreground: #3d5230; /* Dark Forest Green */
+  --card: #faebd7;
+  --card-foreground: #3d5230;
+  --popover: #faebd7;
+  --popover-foreground: #3d5230;
+  --primary: #3d5230; /* Dark Forest Green as primary */
+  --primary-foreground: #faebd7;
+  --secondary: #f5f5dc; /* Slightly darker beige for secondary */
+  --secondary-foreground: #3d5230;
+  --muted: #f0e68c; /* Soft khaki for muted elements */
+  --muted-foreground: #556b2f; /* Darker olive green */
+  --accent: #8fbc8f; /* Soft sage green for accents */
+  --accent-foreground: #2f4f2f;
+  --destructive: #dc2626;
+  --destructive-foreground: #f3f4f6;
+  --border: #d2b48c; /* Tan border color */
+  --input: #f5f5dc;
+  --ring: #3d5230;
+  --chart-1: #8fbc8f;
+  --chart-2: #9acd32;
+  --chart-3: #6b8e23;
+  --chart-4: #228b22;
+  --chart-5: #32cd32;
+  --radius: 0.625rem;
+  --sidebar: #faebd7;
+  --sidebar-foreground: #3d5230;
+  --sidebar-primary: #3d5230;
+  --sidebar-primary-foreground: #faebd7;
+  --sidebar-accent: #f5f5dc;
+  --sidebar-accent-foreground: #3d5230;
+  --sidebar-border: #d2b48c;
+  --sidebar-ring: #3d5230;
+}
+
+.dark {
+  /* Updated dark mode to use #3D5230 as main color per user request */
+  --background: #3d5230; /* Dark forest green background as requested */
+  --foreground: #faebd7; /* Antique white text */
+  --card: #3d5230;
+  --card-foreground: #faebd7;
+  --popover: #3d5230;
+  --popover-foreground: #faebd7;
+  --primary: #faebd7; /* Antique white as primary in dark mode */
+  --primary-foreground: #3d5230;
+  --secondary: #4a6741; /* Slightly lighter forest green for secondary */
+  --secondary-foreground: #faebd7;
+  --muted: #4a6741;
+  --muted-foreground: #d2b48c;
+  --accent: #8fbc8f;
+  --accent-foreground: #3d5230;
+  --destructive: #dc2626;
+  --destructive-foreground: #f3f4f6;
+  --border: #4a6741; /* Lighter forest green for borders */
+  --input: #4a6741;
+  --ring: #8fbc8f;
+  --chart-1: #8fbc8f;
+  --chart-2: #9acd32;
+  --chart-3: #6b8e23;
+  --chart-4: #228b22;
+  --chart-5: #32cd32;
+  --sidebar: #3d5230;
+  --sidebar-foreground: #faebd7;
+  --sidebar-primary: #8fbc8f;
+  --sidebar-primary-foreground: #3d5230;
+  --sidebar-accent: #4a6741;
+  --sidebar-accent-foreground: #faebd7;
+  --sidebar-border: #4a6741;
+  --sidebar-ring: #8fbc8f;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    outline-color: var(--ring);
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Added smooth scrolling for better user experience */
+    scroll-behavior: smooth;
+  }
+
+  /* Custom typography styles for portfolio aesthetic */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .zen-antique {
+    font-family: var(--font-zen-antique);
+  }
+}
+
+/* Custom utility classes for portfolio design */
+@layer utilities {
+  .text-antique-white {
+    color: #faebd7;
+  }
+
+  .text-forest-green {
+    color: #3d5230;
+  }
+
+  .bg-antique-white {
+    background-color: #faebd7;
+  }
+
+  .bg-forest-green {
+    background-color: #3d5230;
+  }
+
+  .border-sage {
+    border-color: #8fbc8f;
+  }
+}
