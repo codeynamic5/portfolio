@@ -8,27 +8,23 @@ import { Button } from "@/components/ui/button"
 export default function HomePage() {
   return (
     <PageLayout>
-      {/* Hero Section with Sketch Integration */}
+      {/* Hero Section with Background Drawing */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Drawing with Parallax */}
-        <ParallaxSection speed={0.2} className="absolute inset-0 z-0">
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/introduction-drawing.png"
-              alt="Your drawing artwork background"
-              fill
-              className="object-cover opacity-60"
-              priority
-            />
-            {/* Light gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/30" />
-          </div>
-        </ParallaxSection>
+        {/* Background Drawing Test */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
+          style={{
+            backgroundImage: 'url(/images/introduction-drawing.png)'
+          }}
+        >
+          {/* Minimal gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/20" />
+        </div>
 
         {/* Hero Content */}
         <div className="relative z-10 text-center space-y-8 px-4 max-w-4xl mx-auto">
           <ScrollAnimation>
-            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-serif font-bold text-primary leading-none">ART</h1>
+            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-serif font-bold text-primary leading-none" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.3)'}}>ART</h1>
           </ScrollAnimation>
 
           <ScrollAnimation delay={300}>
@@ -45,14 +41,14 @@ export default function HomePage() {
 
           <ScrollAnimation delay={600}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-              <Button asChild size="lg" className="bg-primary hover:bg-accent text-primary-foreground">
+              <Button asChild size="lg" className="bg-primary hover:bg-accent text-primary-foreground shadow-lg">
                 <Link href="/projects">View My Work</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-background/80 backdrop-blur-sm shadow-lg"
               >
                 <Link href="/about">About Me</Link>
               </Button>
