@@ -10,11 +10,12 @@ export default function HomePage() {
     <PageLayout>
       {/* Hero Section with Background Drawing */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Drawing Test */}
+        {/* Background Drawing - Only for hero section, from top to scroll indicator */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
+          className="absolute top-0 left-0 right-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
           style={{
-            backgroundImage: 'url(/images/introduction-drawing.png)'
+            backgroundImage: 'url(/images/introduction-drawing.png)',
+            bottom: '80px' // Stops just above the scroll indicator
           }}
         >
           {/* Minimal gradient overlay for text readability */}
@@ -24,17 +25,17 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 text-center space-y-8 px-4 max-w-4xl mx-auto">
           <ScrollAnimation>
-            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-serif font-bold text-primary leading-none" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.3)'}}>ART</h1>
+            <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-serif font-bold text-primary leading-none" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.3)'}}>AMS</h1>
           </ScrollAnimation>
 
           <ScrollAnimation delay={300}>
             <div className="space-y-4">
               <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light">
-                Full-Stack Developer & Artist
+                Web Developer & UI/UX Designer
               </p>
               <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Where technical precision meets creative vision. Crafting digital experiences that inspire and function
-                beautifully.
+                Welcome to my mini cultural hub. 
+                <br />Where technical precision meets creative vision.
               </p>
             </div>
           </ScrollAnimation>
