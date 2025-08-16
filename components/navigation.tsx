@@ -17,7 +17,7 @@ export function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/95 backdrop-blur-sm border border-border rounded-full shadow-lg px-6 py-3">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/95 backdrop-blur-sm border rounded-full shadow-lg px-6 py-3">
       <div className="flex items-center justify-between">
         {/* Logo/Brand */}
         <Link
@@ -56,7 +56,7 @@ export function Navigation() {
       </div>
 
       {/* Mobile Navigation - Hidden by default, can be toggled */}
-      <div className="md:hidden mt-4 pt-4 border-t border-border">
+      <div className="md:hidden mt-4 pt-4 border-t">
         <div className="space-y-2">
           {navigationItems.map((item) => (
             <Link

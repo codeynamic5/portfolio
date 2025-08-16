@@ -10,18 +10,18 @@ export default function HomePage() {
     <PageLayout>
       {/* Hero Section with Sketch Integration */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Sketch with Parallax */}
-        <ParallaxSection speed={0.3} className="absolute inset-0 z-0">
+        {/* Background Drawing with Parallax */}
+        <ParallaxSection speed={0.2} className="absolute inset-0 z-0">
           <div className="relative w-full h-full">
             <Image
-              src="/images/portfolio-sketch.png"
-              alt="Original sketch artwork"
+              src="/images/introduction-drawing.png"
+              alt="Your drawing artwork background"
               fill
-              className="object-cover opacity-20 mix-blend-multiply"
+              className="object-cover opacity-60"
               priority
             />
-            {/* Gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
+            {/* Light gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/30" />
           </div>
         </ParallaxSection>
 
@@ -152,7 +152,7 @@ export default function HomePage() {
           <ScrollAnimation delay={300}>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-lg bg-card border border-border">
+                <div className="relative overflow-hidden rounded-lg bg-card border">
                   <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
                     <span className="text-muted-foreground">Project Preview</span>
                   </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
               </div>
 
               <div className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-lg bg-card border border-border">
+                <div className="relative overflow-hidden rounded-lg bg-card border">
                   <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                     <span className="text-muted-foreground">Gallery Preview</span>
                   </div>
