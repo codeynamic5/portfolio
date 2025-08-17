@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
@@ -22,9 +23,16 @@ export function Navigation() {
         {/* Logo/Brand */}
         <Link
           href="/"
-          className="text-xl font-serif font-bold text-primary hover:text-accent transition-colors duration-300 mr-8"
+          className="flex items-center hover:opacity-80 transition-opacity duration-300 mr-8"
         >
-          ART
+          <Image
+            src="/a-logo.png"
+            alt="A Logo"
+            width={35}
+            height={35}
+            className="object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
