@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
@@ -16,6 +17,7 @@ const navigationItems = [
 
 export function Navigation() {
   const pathname = usePathname()
+  const { theme } = useTheme()
 
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/95 backdrop-blur-sm border rounded-full shadow-lg px-6 py-3">
@@ -23,14 +25,24 @@ export function Navigation() {
         {/* Logo/Brand */}
         <Link
           href="/"
-          className="flex items-center hover:opacity-80 transition-opacity duration-300 mr-8"
+          className="flex items-center hover:opacity-80 transition-all duration-300 mr-8"
         >
           <Image
             src="/a-logo.png"
             alt="A Logo"
             width={35}
             height={35}
-            className="object-contain"
+            className={cn(
+              "object-contain transition-all duration-300",
+              theme === "dark" 
+                ? "brightness-0 saturate-100" 
+                : ""
+            )}
+            style={
+              theme === "dark" 
+                ? { filter: "brightness(0) saturate(100%) invert(97%) sepia(20%) saturate(236%) hue-rotate(346deg) brightness(103%) contrast(93%)" }
+                : {}
+            }
             priority
           />
         </Link>
