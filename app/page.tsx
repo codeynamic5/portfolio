@@ -14,7 +14,7 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-60"
           style={{
-            backgroundImage: 'url(/images/introduction-drawing.png)'
+            backgroundImage: 'url(/images/plataran.png)'
           }}
         >
           {/* Minimal gradient overlay for text readability */}
