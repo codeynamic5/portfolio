@@ -70,10 +70,10 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <ScrollAnimation>
             <div className="text-center space-y-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Creating Digital Experiences</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Creating Digital Artwork</h2>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                I blend the precision of full-stack development with the creativity of artistic expression. Every
-                project is an opportunity to push boundaries, solve complex problems, and create something meaningful.
+                I blend the precision of web development with the creativity of artistic expression. Every
+                project is an opportunity to push boundaries, solve meaningful problems, and create something beautiful.
               </p>
             </div>
           </ScrollAnimation>
