@@ -1,6 +1,13 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
+import { useTheme } from "next-themes"
+import { cn } from "@/lib/utils"
 
 export function Footer() {
+  const { theme } = useTheme()
+
   return (
     <footer className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -9,11 +16,28 @@ export function Footer() {
           <div className="text-center md:text-left">
             <Link
               href="/"
-              className="text-xl font-serif font-bold text-primary hover:text-accent transition-colors duration-300"
+              className="flex items-center justify-center md:justify-start hover:opacity-80 transition-all duration-300"
             >
-              ART
+              <Image
+                src="/a-logo.png"
+                alt="A Logo"
+                width={28}
+                height={28}
+                className={cn(
+                  "object-contain transition-all duration-300",
+                  theme === "dark" 
+                    ? "brightness-0 saturate-100" 
+                    : ""
+                )}
+                style={
+                  theme === "dark" 
+                    ? { filter: "brightness(0) saturate(100%) invert(97%) sepia(20%) saturate(236%) hue-rotate(346deg) brightness(103%) contrast(93%)" }
+                    : {}
+                }
+                priority
+              />
             </Link>
-            <p className="text-sm text-muted-foreground mt-1">Full-Stack Developer & Artist</p>
+            <p className="text-sm text-muted-foreground mt-1">Abella Maya Santi</p>
           </div>
 
           {/* Quick Links */}
