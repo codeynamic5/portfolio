@@ -114,21 +114,6 @@ export default function ConnectPage() {
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Availability */}
-                <Card className="border-border bg-card">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-serif font-semibold text-primary mb-4">Current Availability</h3>
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-muted-foreground">Available for new projects</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      I'm currently accepting new client projects and collaborations. Whether you need a complete web
-                      application, design consultation, or technical expertise, I'd love to hear about your vision.
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </ScrollAnimation>
           </div>

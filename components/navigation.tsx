@@ -19,12 +19,12 @@ export function Navigation() {
   const { theme } = useTheme()
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/95 backdrop-blur-sm border rounded-full shadow-lg px-6 py-3">
-      <div className="flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm px-6 py-4">
+      <div className="max-w-full mx-auto flex items-center justify-between">
         {/* Logo/Brand */}
         <Link
           href="/"
-          className="flex items-center hover:opacity-80 transition-all duration-300 mr-8"
+          className="flex items-center hover:opacity-80 transition-all duration-300"
         >
           <Image
             src="/a-logo.png"
@@ -79,7 +79,7 @@ export function Navigation() {
       </div>
 
       {/* Mobile Navigation - Hidden by default, can be toggled */}
-      <div className="md:hidden mt-4 pt-4 border-t">
+      <div className="md:hidden mt-4 pt-4 border-t border-border/20">
         <div className="space-y-2">
           {navigationItems.map((item) => (
             <Link
