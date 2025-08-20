@@ -43,10 +43,6 @@ export default function AboutPage() {
                   in [your key skills/areas]. My journey has been shaped by a curiosity for 
                   [what drives you] and a commitment to [your values/mission].
                 </p>
-                <p className="text-lg text-foreground leading-relaxed">
-                  When I'm not [working/coding/creating], you can find me [your hobbies/interests]. 
-                  I believe that [your philosophy/belief about work/life].
-                </p>
               </div>
 
               {/* Optional: Skills or highlights */}

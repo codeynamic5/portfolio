@@ -8,10 +8,9 @@ import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
 
 const navigationItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
   { name: "Gallery", href: "/gallery" },
+  { name: "About", href: "/about" },
   { name: "Connect", href: "/connect" },
 ]
 
@@ -54,11 +53,15 @@ export function Navigation() {
               key={item.name}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors duration-300 hover:text-accent px-3 py-1 rounded-full",
-                pathname === item.href ? "text-primary bg-secondary" : "text-muted-foreground",
+                "relative text-sm font-medium transition-colors duration-300 hover:text-accent px-3 py-2",
+                pathname === item.href ? "text-primary" : "text-muted-foreground",
               )}
             >
               {item.name}
+              {/* Active page underline */}
+              {pathname === item.href && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-forest-green rounded-full transition-all duration-300" />
+              )}
             </Link>
           ))}
           <ThemeToggle />
@@ -83,11 +86,15 @@ export function Navigation() {
               key={item.name}
               href={item.href}
               className={cn(
-                "block px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent hover:bg-secondary rounded-full text-center",
-                pathname === item.href ? "text-primary bg-secondary" : "text-muted-foreground",
+                "relative block px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent hover:bg-secondary rounded-full text-center",
+                pathname === item.href ? "text-primary" : "text-muted-foreground",
               )}
             >
               {item.name}
+              {/* Active page underline for mobile */}
+              {pathname === item.href && (
+                <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-forest-green rounded-full transition-all duration-300" />
+              )}
             </Link>
           ))}
         </div>

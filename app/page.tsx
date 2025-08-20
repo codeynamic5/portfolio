@@ -30,7 +30,7 @@ export default function HomePage() {
           <ScrollAnimation delay={300}>
             <div className="space-y-4">
               <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light">
-                Web Developer & UI/UX Designer
+                Developer, Designer, Dreamer
               </p>
               <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Welcome to my mini cultural hub. 
@@ -50,7 +50,7 @@ export default function HomePage() {
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-background/80 backdrop-blur-sm shadow-lg"
               >
-                <Link href="/about">About Me</Link>
+                <Link href="/gallery">View My Art</Link>
               </Button>
             </div>
           </ScrollAnimation>
